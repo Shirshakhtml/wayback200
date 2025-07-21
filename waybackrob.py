@@ -9,7 +9,7 @@ def robots(host):
         response = requests.get(url)
         if response.status_code == 200:
             data = response.json()
-            for entry in data[1:]:  # Skipping the header row
+            for entry in data[1:]:
                 print(f"Timestamp: {entry[0]}, URL: {entry[1]}")
         else:
             print(f"Failed to fetch data for {host}")
